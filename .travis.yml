@@ -1,0 +1,8 @@
+language: generic
+sudo: required
+services:
+    - docker
+before_instal:
+    - docker build -t sujan134/docker-react -f Dockerfile.dev .
+script:
+    - docker run -e CI=true sujan134/docker-react npm run test
